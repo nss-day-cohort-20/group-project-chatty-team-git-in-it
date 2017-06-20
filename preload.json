@@ -1,0 +1,19 @@
+{
+  "preloaded_messages": [
+    {
+      "message": "Welcome to our app!"
+    },
+    {
+      "message": "Just type in the box above and hit enter."
+    },
+    {
+      "message": "You can say anything you want. We won't judge."
+    },
+    {
+      "message": "To clear the screen of messages, hit the Clear All button."
+    },
+    {
+      "message": "If you want to delete one specific message, click its own delete button."
+    }
+  ]
+}
