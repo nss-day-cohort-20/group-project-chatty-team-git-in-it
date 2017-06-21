@@ -1,25 +1,31 @@
-console.log("well at least it's linked", );
-
+	
 {
 	let addMessages = Object.create(null);
-	let messageOutputDiv = document.getElementById("msg-output");
+	let messageArray = [] //initially, our 5 JSON messages, as an imported private array
 	let inputBox = document.getElementById('msg-input');
+	let output = document.getElementById("msg-output");
 
-	inputBox.addEventListener('keyup', function() {
+	addMessages.addToArray = function() {
 		if (event.key === 'Enter')  {
 			console.log("input", inputBox.value);
-			let userNewMsg = inputBox.value;
+			userNewMsg = inputBox.value;
 			messageArray.push(userNewMsg);
-			//TODO call the function that gets the input and converts it to a part of the private array
-			putUserMsgInDom();
-		};
-	});
-
-	function putUserMsgInDom() {
+		}
+	};
+  
+  addMessages.putUserMsgInDom = function () {
+		if (event.key === 'Enter')  {
 			let messageBlock = document.createElement('div');
-			messageBlock.innerHTML = `<p class="msg">${messageArray[messageArray.length -1]}</p><button class="delete-btn">Delete</button>`;
-			messageOutputDiv.appendChild(messageBlock);
+			output.innerHTML = `<p class="msg">${messageArray[messageArray.length -1]}</p><button class="delete-btn">Delete</button>`;
+			output.appendChild(messageBlock);
+		}
 	}
 
+	inputBox.addEventListener('keyup', function() {
+		addMessages.addToArray();
+		addMessages.putUserMsgInDom();
+	});
+	
 	window.Chatty = window.Chatty || {};
+	Chatty.AddMessages = addMessages;
 }
