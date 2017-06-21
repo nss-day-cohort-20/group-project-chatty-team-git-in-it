@@ -15,5 +15,5 @@
 	}
 
 	window.Chatty = window.Chatty || {};
-	Chatt.LoadMessages = loadMessages;
+	Chatty.LoadMessages = loadMessages;
 }
