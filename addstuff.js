@@ -14,9 +14,11 @@
 	};
   
   addMessages.putUserMsgInDom = function () {
+		if (event.key === 'Enter')  {
 			let messageBlock = document.createElement('div');
-			messageBlock.innerHTML = `<p class="msg">${messageArray[messageArray.length -1]}</p><button class="delete-btn">Delete</button>`;
-			messageOutputDiv.appendChild(messageBlock);
+			output.innerHTML = `<p class="msg">${messageArray[messageArray.length -1]}</p><button class="delete-btn">Delete</button>`;
+			output.appendChild(messageBlock);
+		}
 	}
 
 	inputBox.addEventListener('keyup', function() {
