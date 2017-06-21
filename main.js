@@ -10,3 +10,6 @@ function outputMessages (messageArray)  {
 }
 
 Chatty.LoadMessages.retrieveMessages(outputMessages);
+
+
+// let wholeArray = arrayA.concat(arrayB);
