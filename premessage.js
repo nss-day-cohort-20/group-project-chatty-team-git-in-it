@@ -27,4 +27,3 @@
 	Chatty.LoadMessages = loadMessages;
 	getMessages();
 }
-
