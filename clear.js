@@ -30,7 +30,7 @@ function disableBtn() {
 }
 };
 
-
+//test
 // var input = document.getElementById("msg-input");
 
 // function inputKeypress() {
