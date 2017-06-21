@@ -24,7 +24,7 @@
 		addMessages.addToArray();
 		addMessages.putUserMsgInDom();
 	});
-	
+
 	window.Chatty = window.Chatty || {};
 	Chatty.AddMessages = addMessages;
 }
