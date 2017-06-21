@@ -1,4 +1,3 @@
-
 {
 	let addMessages = Object.create(null);
 	let messageArray = [] //initially, our 5 JSON messages, as an imported private array
@@ -12,11 +11,11 @@
 			messageArray.push(userNewMsg);
 		}
 	};
-
-  addMessages.putUserMsgInDom = function (id, msg) {
+  
+  	addMessages.putUserMsgInDom = function () {
 		if (event.key === 'Enter')  {
 			let messageBlock = document.createElement('div');
-			output.innerHTML = `<p id=${id}class="msg">${messageArray[messageArray.length -1]}</p><button class="delete-btn">Delete</button>`;
+			output.innerHTML += `<p class="msg">${messageArray[messageArray.length -1]}</p><button class="delete-btn">Delete</button>`;
 			output.appendChild(messageBlock);
 		}
 	}
