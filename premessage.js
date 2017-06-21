@@ -3,8 +3,6 @@
 
 	let messages = null;
 
-	
-
 	function getMessages () {
 		let requestMess = new XMLHttpRequest();
 		requestMess.addEventListener("load", setMessages);
@@ -27,5 +25,6 @@
 
 	window.Chatty = window.Chatty || {};
 	Chatty.LoadMessages = loadMessages;
+	getMessages();
 }
-getMessages();
+
