@@ -3,25 +3,17 @@
 
 	let messages = null;
 
-	function getMessages () {
+	loadMessages.getMessages = function () {
 		let requestMess = new XMLHttpRequest();
 		requestMess.addEventListener("load", setMessages);
 		requestMess.open("GET", "preload.json");
 		requestMess.send();
 	}
 
-	function setMessages () {
+	loadMessages.setMessages = function () {
 		messages = JSON.parse(event.target.responseText).preloaded_messages;
 	}
 
-	// function displayMessages (message) {
-	// 	messages.forEach(function(message) {
-	// 		let messOutput = document.getElementById('msg-output');
-	// 		messOutput.innerHTML += `${message.message}<br>`;
-	// 		})
-	// }
-
 	window.Chatty = window.Chatty || {};
 	Chatty.LoadMessages = loadMessages;
-	getMessages();
 }

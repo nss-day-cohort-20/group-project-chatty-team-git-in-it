@@ -1,19 +1,32 @@
-console.log("well at least it's linked", );
+{
+	let addMessages = Object.create(null);
 
-var Chatty = (function (prevChatty) {
 	let messageArray = [] //initially, our 5 JSON messages, as an imported private array
 
-
 	let inputBox = document.getElementById('msg-input');
-	inputBox.addEventListener('keyup', function() {
+
+	let output = document.getElementById("msg-output");
+	
+	// gets the input and converts it to a part of the private array
+	addMessages.addToArray = function() {
 		if (event.key === 'Enter')  {
 			console.log("input", inputBox.value);
 			userNewMsg = inputBox.value;
 			messageArray.push(userNewMsg);
-			//TODO call the function that gets the input and converts it to a part of the private array
 		}
+	};
+
+	addMessages.addToDiv = function () {
+		if (event.key === 'Enter')  {
+			output.innerHTML += inputBox.value + `<br>`;
+		}
+	}
+
+	inputBox.addEventListener('keyup', function() {
+		addMessages.addToArray();
+		addMessages.addToDiv();
 	});
-
-
-
-})(Chatty || {});
+	
+	window.Chatty = window.Chatty || {};
+	Chatty.AddMessages = addMessages;
+}

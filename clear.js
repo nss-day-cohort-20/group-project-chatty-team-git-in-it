@@ -1,48 +1,34 @@
-//  Clear array of user input messages
-
-//  disabled if there are no messages in the div
-
-// (there are tips on eventlisteners and setting element attributes in the readme )
-console.log("I work!");
 {
 	let clearMessages = Object.create(null);
 
 	var clear = document.getElementById("clear-btn");
 	var output = document.getElementById("msg-output");
 
-	// Clear button function
-	function clearElement () {
-		// document.getElementById("dark-theme-box").checked = false;
-		// document.getElementById("large-text-box").checked = false;
-		output.innerHTML = "";
-		// input.value.innerHTML = "";
+	//clear button empties array of messages
+	clearMessages.clearArr = function () {
+
 	}
 
+	// Clear button removes text from msg div
+	clearMessages.clearElement = function () {
+		output.innerHTML = "";
+	}
+
+	// Disabling the clear button if no messages are entered into the DOM
+	clearMessages.disableBtn = function () {
+		if  (output.innerHTML === "") {
+	    clear.disabled = true;
+		} else {
+	    clear.disabled = false;
+		}
+	};
+
 	clear.addEventListener("click", function() {
-		clearElement();
+		clearMessages.clearArr();
+		clearMessages.clearElement();
+		clearMessages.disableBtn();
 	});
 
-//Disabling the clear button if no messages are entered into the DOM
-
-// function disableBtn() {
-// 	if  (output.value === ""); {
-//     document.getElementById("clear-btn").disabled = true;
-// 	} else {
-//     document.getElementById("clear-btn").disabled = false;
-// 	}
-// };
-
-
-// var input = document.getElementById("msg-input");
-
-// function inputKeypress() {
-// 	console.log(event);
-// 	output.innerHTML= `<p class="msg">${input.value}</p>`
-// }
-// input.addEventListener("keypress", inputKeypress);
-
-// name of array = []
 	window.Chatty = window.Chatty || {};
 	Chatty.ClearMessages = clearMessages;
-
 }
