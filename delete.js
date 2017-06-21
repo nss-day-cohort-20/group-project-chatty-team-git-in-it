@@ -7,7 +7,17 @@
 	// in the previous IIFE.
 	newChattyObj.removeMessage = function(id) {
 		let currentElement = document.getElementById(id);
+		currentElement.parentNode.remove();
 	}
+
+	newChattyObj.removeFromArray = function(msgArray, id) {
+		messagesArray.splice(id);
+	}
+
+	deleteButton.addEventListener("click",
+		newChattyObj.removeMessage;
+		newChattyObj.removeFromArray;
+	})
 
 	window.Chatty = window.Chatty || {};
 	Chatty.RemoveMessage = newChattyObj;
