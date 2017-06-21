@@ -2,7 +2,6 @@ console.log("well at least it's linked", );
 
 {
 	let addMessages = Object.create(null);
-	let messageArray = [] //initially, our 5 JSON messages, as an imported private array
 	let messageOutputDiv = document.getElementById("msg-output");
 	let inputBox = document.getElementById('msg-input');
 
