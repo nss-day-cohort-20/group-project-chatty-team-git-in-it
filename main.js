@@ -1,31 +1,27 @@
-function outputMessages (messageArray)  {
-	let messageBlock = document.createElement('div');
-	for (let i=0; i<messageArray.length; i++) {
-		output.innerHTML += `<p class="msg">${messageArray[i]}</p><button class="delete-btn">Delete</button>`;
-		output.appendChild(messageBlock);
-	}
-}
+let jsonArr = Chatty.LoadMessages.getMessages();
+let messArr = Chatty.DOMInteraction.getAllMessages();
 
-function createBigArray(jsonArray) {
-}
+Chatty.LoadMessages.retrieveMessages(Chatty.DOMInteraction.putJsonMsgInDom);
 
-function placeHolder(messages) {
-	let jsonArr = Chatty.LoadMessages.getMessages();
-	let newArr = jsonArr.concat(messages);
+// console.log("?",Chatty.DOMInteraction.addAllMessages(jsonArr, messArr));
+// var bigArray = Chatty.DOMInteraction.addAllMessages(jsonArr, messArr);
 
-	console.log("new array", newArr);
-}
+// window.addEventListener("load", function(){
+// 	Chatty.LoadMessages.retrieveMessages(Chatty.DOMInteraction.addAllMessages);
+// })
 
-Chatty.LoadMessages.retrieveMessages(createBigArray)
-//
-let addTheme = document.querySelector(".theme");
 
-document.getElementById("dark-theme-box").addEventListener("click", function() {
-	addTheme.classList.toggle("dark");
-});
 
-document.getElementById("large-text-box").addEventListener("click", function() {
-	addTheme.classList.toggle("large");
-});
+// function createBigArray(jsonArray) {
+// }
 
-// let wholeArray = arrayA.concat(arrayB);
+// function placeHolder(messages) {
+// 	let jsonArr = Chatty.LoadMessages.getMessages();
+// 	let newArr = jsonArr.concat(messages);
+
+// 	console.log("new array", newArr);
+// }
+
+// Chatty.LoadMessages.retrieveMessages(createBigArray)
+
+// // let wholeArray = arrayA.concat(arrayB);

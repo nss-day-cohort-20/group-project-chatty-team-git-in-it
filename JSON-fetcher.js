@@ -17,7 +17,6 @@
 		messagesObjs = JSON.parse(event.target.responseText).preloaded_messages;
 		arrayUpMessages(messagesObjs);
 		cb(messages);
-		loadMessages.getMessages()
 	}
 
  //goes through that array of objects and returns an array of just strings, the 'message' values from that object
