@@ -8,8 +8,12 @@
 		console.log("input", inputBox.value);
 		userNewMsg = inputBox.value;
 		messageArray.push(userNewMsg);
+		placeHolder(messageArray)
 	};
-  
+
+// One IIFE should contain a function that accepts an element id, and the user message,
+// and then add the user's message - along with the delete button - to the specified parent element.
+// Each message should be stored in a private array in this IIFE. This IIFE should also expose a function to read all messages, and delete a single message.
   	addMessages.putUserMsgInDom = function () {
 		let messageBlock = document.createElement('div');
 		output.innerHTML += `<p class="msg">${messageArray[messageArray.length -1]}</p><button class="delete-btn">Delete</button>`;
@@ -23,6 +27,10 @@
 			inputBox.value = '';
 		}
 	});
+
+	addMessages.readAllMessages = function() {
+
+	}
 
 	window.Chatty = window.Chatty || {};
 	Chatty.AddMessages = addMessages;

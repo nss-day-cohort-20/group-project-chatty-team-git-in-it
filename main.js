@@ -6,8 +6,18 @@ function outputMessages (messageArray)  {
 	}
 }
 
-Chatty.LoadMessages.retrieveMessages(outputMessages);
+function createBigArray(jsonArray) {
+}
 
+function placeHolder(messages) {
+	let jsonArr = Chatty.LoadMessages.getMessages();
+	let newArr = jsonArr.concat(messages);
+
+	console.log("new array", newArr);
+}
+
+Chatty.LoadMessages.retrieveMessages(createBigArray)
+//
 let addTheme = document.querySelector(".theme");
 
 document.getElementById("dark-theme-box").addEventListener("click", function() {
