@@ -6,17 +6,18 @@
 //retrieves messages from JSON file
 	loadMessages.retrieveMessages = function (cb) {
 		let requestMess = new XMLHttpRequest();
-		requestMess.addEventListener("load", function () {setMessages(cb)
+		requestMess.addEventListener("load", function () {
+			setMessages(cb);
 		});
 		requestMess.open("GET", "preload.json");
 		requestMess.send();
 	}
-
 //parses JSON messages into an array of objects (each with one key-value pair)
 	function setMessages (cb) {
 		messagesObjs = JSON.parse(event.target.responseText).preloaded_messages;
 		arrayUpMessages(messagesObjs);
 		cb(messages);
+		loadMessages.getMessages()
 	}
 
  //goes through that array of objects and returns an array of just strings, the 'message' values from that object

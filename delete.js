@@ -14,10 +14,10 @@
 		messagesArray.splice(id);
 	}
 
-	deleteButton.addEventListener("click",
-		newChattyObj.removeMessage;
-		newChattyObj.removeFromArray;
-	})
+	// deleteButton.addEventListener("click",
+	// 	newChattyObj.removeMessage;
+	// 	newChattyObj.removeFromArray;
+	// })
 
 	window.Chatty = window.Chatty || {};
 	Chatty.RemoveMessage = newChattyObj;
