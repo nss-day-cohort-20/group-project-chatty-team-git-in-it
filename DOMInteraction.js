@@ -8,7 +8,6 @@
 		console.log("input", inputBox.value);
 		userNewMsg = inputBox.value;
 		messageArray.push(userNewMsg);
-		placeHolder(messageArray)
 	};
 
 // One IIFE should contain a function that accepts an element id, and the user message,
@@ -21,18 +20,43 @@
 		output.appendChild(messageBlock);
 	}
 
+	addMessages.putJsonMsgInDom = function (messageArray)  {
+		let messageBlock = document.createElement('div');
+		for (let i=0; i<messageArray.length; i++) {
+			output.innerHTML += `<p class="msg">${messageArray[i]}</p><button class="delete-btn">Delete</button>`;
+			output.appendChild(messageBlock);
+		}
+	}
+
 	inputBox.addEventListener('keyup', function() {
 		if (event.key === 'Enter') {
 			addMessages.addToArray();
 			addMessages.putUserMsgInDom();
 			inputBox.value = '';
+			let bigArray = addMessages.addAllMessages(jsonArr, messArr);
+			console.log("whole array?", bigArray);
 		}
 	});
 
-	addMessages.readAllMessages = function() {
-
+	addMessages.getAllMessages = function() {
+		return messageArray;
 	}
 
+	addMessages.addAllMessages = function (Arr1, Arr2) {
+		let bigAssArray = Arr1.concat(Arr2);
+		return bigAssArray
+	}
+
+	let addTheme = document.querySelector(".theme");
+
+	document.getElementById("dark-theme-box").addEventListener("click", function() {
+		addTheme.classList.toggle("dark");
+	});
+
+	document.getElementById("large-text-box").addEventListener("click", function() {
+		addTheme.classList.toggle("large");
+	});
+
 	window.Chatty = window.Chatty || {};
-	Chatty.AddMessages = addMessages;
+	Chatty.DOMInteraction = addMessages;
 }
