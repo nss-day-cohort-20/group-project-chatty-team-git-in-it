@@ -1,17 +1,20 @@
-let jsonArr = Chatty.LoadMessages.getMessages();
-let messArr = Chatty.DOMInteraction.getAllMessages();
+
 
 Chatty.LoadMessages.retrieveMessages(Chatty.DOMInteraction.putJsonMsgInDom);
+// var bigArray = Chatty.DOMInteraction.combineAllMessages(jsonArr, userArr);
+// console.log("whole array?", bigArray);
+let inputBox = document.getElementById('msg-input');
+let jsonArr = Chatty.LoadMessages.getMessages();
+let userArr = Chatty.DOMInteraction.getAllMessages();
 
-// console.log("?",Chatty.DOMInteraction.addAllMessages(jsonArr, messArr));
-// var bigArray = Chatty.DOMInteraction.addAllMessages(jsonArr, messArr);
-
-// window.addEventListener("load", function(){
-// 	Chatty.LoadMessages.retrieveMessages(Chatty.DOMInteraction.addAllMessages);
-// })
-
-
-
+inputBox.addEventListener('keyup', function() {
+		if (event.key === 'Enter') {
+			Chatty.DOMInteraction.addToArray();
+			Chatty.DOMInteraction.putUserMsgInDom("id", inputBox.value);
+			inputBox.value = '';
+			console.log("whole array?", Chatty.DOMInteraction.combineAllMessages(jsonArr, userArr));
+		}
+	});
 // function createBigArray(jsonArray) {
 // }
 
