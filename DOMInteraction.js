@@ -28,23 +28,22 @@
 		}
 	}
 
-	inputBox.addEventListener('keyup', function() {
-		if (event.key === 'Enter') {
-			addMessages.addToArray();
-			addMessages.putUserMsgInDom();
-			inputBox.value = '';
-			let bigArray = addMessages.addAllMessages(jsonArr, messArr);
-			console.log("whole array?", bigArray);
-		}
-	});
+	// inputBox.addEventListener('keyup', function() {
+	// 	if (event.key === 'Enter') {
+	// 		addMessages.addToArray();
+	// 		addMessages.putUserMsgInDom();
+	// 		inputBox.value = '';
+	// 		// addMessages.()
+	// 		// console.log("whole array?", addMessages.combineAllMessages(jsonArr, messArr));
+	// 	}
+	// });
 
 	addMessages.getAllMessages = function() {
 		return messageArray;
 	}
 
-	addMessages.addAllMessages = function (Arr1, Arr2) {
-		let bigAssArray = Arr1.concat(Arr2);
-		return bigAssArray
+	addMessages.combineAllMessages = function (Arr1, Arr2) {
+		return Arr1.concat(Arr2);
 	}
 
 	let addTheme = document.querySelector(".theme");
