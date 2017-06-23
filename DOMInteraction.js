@@ -2,6 +2,7 @@
 	let addMessages = Object.create(null);
 	let output = document.getElementById("msg-output");
 	let messageArray = [];
+	let combinedArray = [];
 
 	addMessages.addToArray = function() {
 		userNewMsg = inputBox.value;
