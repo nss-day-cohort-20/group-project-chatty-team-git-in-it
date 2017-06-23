@@ -8,7 +8,7 @@ inputBox.addEventListener('keyup', function() {
 		if (event.key === 'Enter') {
 			Chatty.DeleteMess.clearElement();
 			Chatty.DOMInteraction.addToArray();
-			combinedArray = Chatty.DOMInteraction.combineAllMessages(jsonArr, userArr)
+			combinedArray = Chatty.DOMInteraction.combineAllMessages(userArr, jsonArr)
 			// let bigArray = Chatty.DOMInteraction.combineAllMessages(jsonArr, userArr);
 			Chatty.DOMInteraction.assignIds(combinedArray);//(bigArray);
 			// Chatty.DOMInteraction.putUserMsgInDom("id", inputBox.value);

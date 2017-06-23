@@ -6,7 +6,7 @@
 
 	addMessages.addToArray = function() {
 		userNewMsg = inputBox.value;
-		messageArray.push(userNewMsg);
+		messageArray.unshift(userNewMsg);
 	};
   
 // One IIFE should contain a function that accepts an element id, and the user message,
