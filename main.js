@@ -22,5 +22,4 @@ clear.addEventListener("click", function() {
 		Chatty.DeleteMess.clearArr(combinedArray, userArr, jsonArr);
 		Chatty.DeleteMess.clearElement();
 		Chatty.DeleteMess.disableBtn();
-		console.log("clear array?", combinedArray);
 	});

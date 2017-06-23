@@ -9,8 +9,8 @@
 		messageArray.unshift(userNewMsg);
 	};
   
-  addMessages.putMsgsInDom = function (id, msg) {
-		let messageBlock = document.createElement('div');
+  	addMessages.putMsgsInDom = function (id, msg) {
+  		let messageBlock = document.createElement('div');
 		messageBlock.setAttribute("id", `${id}`)
 		messageBlock.innerHTML = `<p class="msg">${msg}</p><button class="delete-btn">Delete</button>`;
 		output.appendChild(messageBlock);
