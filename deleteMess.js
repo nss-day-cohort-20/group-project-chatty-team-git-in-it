@@ -1,7 +1,6 @@
 {
 	let deleteMess = Object.create(null);
 	var clear = document.getElementById("clear-btn");
-	let deleteButton = document.getElementsByClassName("delete-btn");
 	var output = document.getElementById("msg-output");
 
 	// One IIFE should accept a message element id and then remove the correct element from the DOM.
@@ -9,18 +8,16 @@
 	// in the previous IIFE.
 	deleteMess.removeMessage = function(id) {
 		let currentElement = document.getElementById(id);
-		currentElement.parentNode.remove();
+		currentElement.remove();
 	}
 
 	deleteMess.removeFromArray = function(msgArray, id) {
-		messagesArray.splice(id);
+		combinedArray = msgArray.splice(id);
+		console.log("msgArray?", msgArray);
+		console.log("combinedArray?", combinedArray);
+		return combinedArray;
 	}
 
-	// deleteButton.addEventListener("click",
-	// 	newChattyObj.removeMessage;
-	// 	newChattyObj.removeFromArray;
-	// })
-	
 	//clear button empties array of messages
 	deleteMess.clearArr = function (arrName, arrName2, arrName3) {
 		arrName.length = 0;
