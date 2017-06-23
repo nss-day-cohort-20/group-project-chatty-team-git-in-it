@@ -1,4 +1,4 @@
-Chatty.LoadMessages.retrieveMessages(Chatty.DOMInteraction.putJsonMsgInDom);
+Chatty.LoadMessages.retrieveMessages(Chatty.DOMInteraction.assignIds);
 
 let inputBox = document.getElementById('msg-input');
 let jsonArr = Chatty.LoadMessages.getMessages();
