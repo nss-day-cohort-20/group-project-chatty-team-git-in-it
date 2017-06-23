@@ -22,8 +22,10 @@
 	// })
 	
 	//clear button empties array of messages
-	deleteMess.clearArr = function (arrName) {
+	deleteMess.clearArr = function (arrName, arrName2, arrName3) {
 		arrName.length = 0;
+		arrName2.length = 0;
+		arrName3.length = 0;
 	}
 
 	// Clear button removes text from msg div
