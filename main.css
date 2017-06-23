@@ -3,6 +3,36 @@
 	background-color: black;
 }
 
+.dark #msg-output {
+	border: 2px solid white;
+}
+
 .large {
 	font-size: 1.5em;
+}
+
+nav {
+	margin: 0 auto;
+	max-width: 75%;
+}
+
+#msg-output {
+	width: 600px;
+    height: 500px;
+    overflow: scroll;
+    border: 2px solid black;
+    margin:	0 auto;
+}
+
+.msg {
+	padding: 10px;
+}
+
+.msg {
+	text-align: left;
+}
+
+#msg-input {
+	width: 450px;
+
 }
