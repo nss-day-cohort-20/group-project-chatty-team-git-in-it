@@ -1,4 +1,4 @@
-Chatty.LoadMessages.retrieveMessages(Chatty.DOMInteraction.putJsonMsgInDom);
+Chatty.LoadMessages.retrieveMessages(Chatty.DOMInteraction.assignIds);
 
 let inputBox = document.getElementById('msg-input');
 let jsonArr = Chatty.LoadMessages.getMessages();
@@ -6,6 +6,7 @@ let userArr = Chatty.DOMInteraction.getUserMessages();
 
 inputBox.addEventListener('keyup', function() {
 		if (event.key === 'Enter') {
+			Chatty.DeleteMess.clearElement();
 			Chatty.DOMInteraction.addToArray();
 			combinedArray = Chatty.DOMInteraction.combineAllMessages(jsonArr, userArr)
 			// let bigArray = Chatty.DOMInteraction.combineAllMessages(jsonArr, userArr);
