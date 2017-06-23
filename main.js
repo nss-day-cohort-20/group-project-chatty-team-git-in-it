@@ -12,6 +12,7 @@ inputBox.addEventListener('keyup', function() {
 			Chatty.DOMInteraction.addToArray();
 			Chatty.DOMInteraction.putUserMsgInDom("id", inputBox.value);
 			inputBox.value = '';
+			Chatty.DeleteMess.disableBtn();
 			console.log("whole array?", Chatty.DOMInteraction.combineAllMessages(jsonArr, userArr));
 		}
 	});
