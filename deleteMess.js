@@ -22,8 +22,8 @@
 	// })
 	
 	//clear button empties array of messages
-	deleteMess.clearArr = function () {
-
+	deleteMess.clearArr = function (arrName) {
+		arrName.length = 0;
 	}
 
 	// Clear button removes text from msg div
@@ -40,11 +40,11 @@
 		}
 	};
 
-	clear.addEventListener("click", function() {
-		deleteMess.clearArr();
-		deleteMess.clearElement();
-		deleteMess.disableBtn();
-	});
+	// clear.addEventListener("click", function() {
+	// 	deleteMess.clearArr();
+	// 	deleteMess.clearElement();
+	// 	deleteMess.disableBtn();
+	// });
 
 	window.Chatty = window.Chatty || {};
 	Chatty.DeleteMess = deleteMess;
