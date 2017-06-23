@@ -7,10 +7,13 @@ let userArr = Chatty.DOMInteraction.getUserMessages();
 inputBox.addEventListener('keyup', function() {
 		if (event.key === 'Enter') {
 			Chatty.DOMInteraction.addToArray();
-			Chatty.DOMInteraction.putUserMsgInDom("id", inputBox.value);
+			let bigArray = Chatty.DOMInteraction.combineAllMessages(jsonArr, userArr);
+			Chatty.DOMInteraction.assignIds(bigArray);
+			// Chatty.DOMInteraction.putUserMsgInDom("id", inputBox.value);
 			inputBox.value = '';
 			combinedArray = Chatty.DOMInteraction.combineAllMessages(jsonArr, userArr)
 			console.log("whole array?", combinedArray);
+			Chatty.DeleteMess.disableBtn();
 		}
 	});
 

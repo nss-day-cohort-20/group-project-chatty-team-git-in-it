@@ -8,13 +8,23 @@
 		userNewMsg = inputBox.value;
 		messageArray.push(userNewMsg);
 	};
-
-  	addMessages.putUserMsgInDom = function (id, msg) {
+  
+// One IIFE should contain a function that accepts an element id, and the user message,
+// and then add the user's message - along with the delete button - to the specified parent element.
+// Each message should be stored in a private array in this IIFE. This IIFE should also expose a function to read all messages, and delete a single message.
+  addMessages.putMsgsInDom = function (id, msg) {
 		let messageBlock = document.createElement('div');
 		messageBlock.setAttribute("id", `${id}`)
-		output.innerHTML += `<p class="msg">${msg}</p><button class="delete-btn">Delete</button>`;
+		messageBlock.innerHTML = `<p class="msg">${msg}</p><button class="delete-btn">Delete</button>`;
 		output.appendChild(messageBlock);
 	}
+
+	addMessages.assignIds = function(arrayToBeAssignedIds) {
+		for (let i = 0; i < arrayToBeAssignedIds.length; i++) {
+			addMessages.putMsgsInDom(i, arrayToBeAssignedIds[i])
+		}
+	}
+
 
 	addMessages.putJsonMsgInDom = function (messageArray)  {
 		let messageBlock = document.createElement('div');
