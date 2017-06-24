@@ -13,6 +13,7 @@ inputBox.addEventListener('keyup', function() {
 		if (event.key === 'Enter') {
 			Chatty.DeleteMess.clearElement();
 			Chatty.DOMInteraction.addToArray();
+			combinedArray = Chatty.DOMInteraction.combineAllMessages(userArr, jsonArr)
 			let combinedArray = Chatty.DOMInteraction.combineAllMessages(jsonArr, userArr)
 			// let bigArray = Chatty.DOMInteraction.combineAllMessages(jsonArr, userArr);
 			Chatty.DOMInteraction.assignIds(combinedArray);//(bigArray);
@@ -27,8 +28,10 @@ clear.addEventListener("click", function() {
 		Chatty.DeleteMess.clearArr(combinedArray, userArr, jsonArr);
 		Chatty.DeleteMess.clearElement();
 		Chatty.DeleteMess.disableBtn();
-		console.log("clear array?", combinedArray);
 	});
+
+		console.log("clear array?", combinedArray);
+
 
 window.addEventListener("click", function() {
 	if (event.target.classList.contains("delete-btn")) {
