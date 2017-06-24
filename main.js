@@ -14,7 +14,7 @@ inputBox.addEventListener('keyup', function() {
 			Chatty.DeleteMess.clearElement();
 			Chatty.DOMInteraction.addToArray();
 			combinedArray = Chatty.DOMInteraction.combineAllMessages(userArr, jsonArr)
-			let combinedArray = Chatty.DOMInteraction.combineAllMessages(jsonArr, userArr)
+			// let combinedArray = Chatty.DOMInteraction.combineAllMessages(jsonArr, userArr)
 			// let bigArray = Chatty.DOMInteraction.combineAllMessages(jsonArr, userArr);
 			Chatty.DOMInteraction.assignIds(combinedArray);//(bigArray);
 			// Chatty.DOMInteraction.putUserMsgInDom("id", inputBox.value);
@@ -30,7 +30,7 @@ clear.addEventListener("click", function() {
 		Chatty.DeleteMess.disableBtn();
 	});
 
-		console.log("clear array?", combinedArray);
+		// console.log("clear array?", combinedArray);
 
 
 window.addEventListener("click", function() {
