@@ -4,12 +4,12 @@ let inputBox = document.getElementById('msg-input');
 let clear = document.getElementById('clear-btn')
 
 inputBox.addEventListener('keypress', function() {
-	if (event.key === 'Enter') {
-		Chatty.DeleteMess.clearElement();
-		Chatty.DOMInteraction.addToArray();
-		Chatty.DOMInteraction.assignIds(Chatty.DOMInteraction.getUserMessages());
-		inputBox.value = '';
-		Chatty.DeleteMess.disableBtn();
+	if (inputBox.value !== '' && event.key === 'Enter') {
+			Chatty.DeleteMess.clearElement();
+			Chatty.DOMInteraction.addToArray();
+			Chatty.DOMInteraction.assignIds(Chatty.DOMInteraction.getUserMessages());
+			inputBox.value = '';
+			Chatty.DeleteMess.disableBtn();
 	}
 });
 
