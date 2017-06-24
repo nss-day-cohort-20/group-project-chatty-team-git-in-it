@@ -11,18 +11,13 @@
 		currentElement.remove();
 	}
 
-	deleteMess.removeFromArray = function(msgArray, id) {
-		combinedArray = msgArray.splice(id);
-		console.log("msgArray?", msgArray);
-		console.log("combinedArray?", combinedArray);
-		return combinedArray;
+	deleteMess.removeFromArray = function(msgArray, id) {;
+		msgArray.splice(id, 1);
 	}
 
 	//clear button empties array of messages
-	deleteMess.clearArr = function (arrName, arrName2, arrName3) {
-		arrName.length = 0;
-		arrName2.length = 0;
-		arrName3.length = 0;
+	deleteMess.clearArr = function (arrayToClear) {
+		arrayToClear.length = 0;
 	}
 
 	// Clear button removes text from msg div

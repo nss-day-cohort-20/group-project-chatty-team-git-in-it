@@ -1,17 +1,18 @@
 {
 	let loadMessages = Object.create(null);
-
 	let messages = [];
 
-//retrieves messages from JSON file
-	loadMessages.retrieveMessages = function (cb) {
+//retrieves messages from JSON file--- cb on page load is assignIDs
+	loadMessages.retrieveMessages = function (assignIdFunc, jsonToArrayFunc) {
 		let requestMess = new XMLHttpRequest();
 		requestMess.addEventListener("load", function () {
-			setMessages(cb);
+			setMessages(assignIdFunc);
+			jsonToArrayFunc(messages);
+
 		});
 		requestMess.open("GET", "preload.json");
 		requestMess.send();
-	}
+	} //   							on load cb is still assign IDs
 //parses JSON messages into an array of objects (each with one key-value pair)
 	function setMessages (cb) {
 		messagesObjs = JSON.parse(event.target.responseText).preloaded_messages;
@@ -29,6 +30,7 @@
 //I need to write a function that will return the array for access in MAIN JS
 	loadMessages.getMessages = function() {
 		return messages;
+		console.log(messages);
 	}
 
   window.Chatty = window.Chatty || {};
