@@ -1,36 +1,29 @@
 {
 	let deleteMess = Object.create(null);
-	var clear = document.getElementById("clear-btn");
-	var output = document.getElementById("msg-output");
+	// let clear = document.getElementById("clear-btn");
+	let output = document.getElementById("msg-output");
 
-	// One IIFE should accept a message element id and then remove the correct element from the DOM.
-	// This IIFE should also remove the corresponding message from the private array that was created
-	// in the previous IIFE.
+	// removes message from DOM based on id given
 	deleteMess.removeMessage = function(id) {
 		let currentElement = document.getElementById(id);
 		currentElement.remove();
 	}
-
-	deleteMess.removeFromArray = function(msgArray, id) {
-		combinedArray = msgArray.splice(id);
-		console.log("msgArray?", msgArray);
-		console.log("combinedArray?", combinedArray);
-		return combinedArray;
+	// takes the ID of one of the msg divs and deletes it from base array;
+	deleteMess.removeFromArray = function(msgArray, id) {;
+		msgArray.splice(id, 1);
 	}
 
-	//clear button empties array of messages
-	deleteMess.clearArr = function (arrName, arrName2, arrName3) {
-		arrName.length = 0;
-		arrName2.length = 0;
-		arrName3.length = 0;
+	// clear button empties array of messages
+	deleteMess.clearArr = function (arrayToClear) {
+		arrayToClear.length = 0;
 	}
 
-	// Clear button removes text from msg div
+	// clear button removes text from msg div
 	deleteMess.clearElement = function () {
 		output.innerHTML = "";
 	}
 
-	// Disabling the clear button if no messages are entered into the DOM
+	// Checks to see if there are any messages, if not: disables clear button.
 	deleteMess.disableBtn = function () {
 		if  (output.innerHTML === "") {
 	    clear.disabled = true;
@@ -38,12 +31,6 @@
 	    clear.disabled = false;
 		}
 	};
-
-	// clear.addEventListener("click", function() {
-	// 	deleteMess.clearArr();
-	// 	deleteMess.clearElement();
-	// 	deleteMess.disableBtn();
-	// });
 
 	window.Chatty = window.Chatty || {};
 	Chatty.DeleteMess = deleteMess;
