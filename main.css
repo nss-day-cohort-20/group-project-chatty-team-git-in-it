@@ -40,7 +40,7 @@ nav {
 	overflow: auto;
 	margin: 0 auto;
 	width: 100%;
-	border-bottom: 1px solid black;
+	border-bottom: 2px solid black;
 	border-top-right-radius: 8px;
 	border-top-left-radius: 8px;
 }
@@ -113,7 +113,7 @@ button {
 	transition-duration: .7s;
 }
 
-button:hover {
+button:hover:enabled {
 	background-color: #303030;
 	color: white;
 }
