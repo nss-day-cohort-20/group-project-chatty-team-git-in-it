@@ -14,8 +14,12 @@ html {
 	background: #303030;
 }
 
-.dark #msg-output, .dark nav {
+.dark #msg-output {
 	background-color: #565656;
+}
+
+.dark nav {
+	background-color: #474747
 }
 
 
@@ -35,7 +39,6 @@ label {
 nav {
 	overflow: auto;
 	margin: 0 auto;
-	/*background-color: rgba(255,255,255, 0.4);*/
 	width: 100%;
 	border-bottom: 1px solid black;
 	border-top-right-radius: 8px;
@@ -46,6 +49,7 @@ footer {
 	text-align: center;
 	color: white;
 }
+
 .container {
 	width: 60%;
 	min-width: 320px;
@@ -56,9 +60,6 @@ footer {
     border-radius: 8px;
     box-shadow: 2px 2px 80px black;
 }
-/*.input-and-btn-container {
-	display: block;
-}*/
 
 .checkboxes, .input-and-btn-container {
 	width: 50%;
@@ -66,12 +67,12 @@ footer {
 	margin: 1em auto 1em auto;
 	font-size: 1em;
 	text-align: center;
-
 }
 
 .checkboxes label {
 	margin-right: 1em;
 }
+
 .msg {
 	text-align: left;
 	float: left;
