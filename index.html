@@ -1,22 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html class="theme">
 	<head>
 		<meta charset="UTF-8">
-		<title>Chatty</title>
+		<title>Squawk!</title>
+		<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="main.css">
 	</head>
-	<body class="theme">
-		<nav class="theme">
-			<img src="squawk.png" alt="squawk logo" width="300" height="162">
-			<input type="text" id="msg-input" >
-			<button id="clear-btn">Clear All Messages</button><br>
-			<input type="checkbox" name="modifiers" id="dark-theme-box">
-			<label for="dark-theme-box">Dark Theme</label>
-			<input type="checkbox" name="modifiers" id="large-text-box">
-			<label for="large-text-box">Large Text</label><br>
-		</nav>
-			<br>
-			<div id="msg-output"></div>
+	<body>
+		<div class="container">
+			<nav class="navbar">
+				<img src="squawk.png" class="logo-pic" alt="squawk logo" width="300" height="162">
+				<div class="input-and-btn-container">
+					<input type="text" id="msg-input" class="msg-input">
+					<button id="clear-btn">Clear All Messages</button>
+				</div>
+				<div class="checkboxes">
+					<input type="checkbox" name="modifiers" id="dark-theme-box">
+					<label for="dark-theme-box">Dark Theme</label>
+					<input type="checkbox" name="modifiers" id="large-text-box">
+					<label for="large-text-box">Large Text</label><br>
+				</div>
+			</nav>
+			<div id="msg-output" class="msg-output biggerTextOption"></div>
+		</div>
+		<footer>&copy; Git in it : Nashville Software School
+		</footer>
 		<script type="text/javascript" src="JSON-fetcher.js"></script>
 		<script type="text/javascript" src="DOMInteraction.js"></script>
 		<script type="text/javascript" src="deleteMess.js"></script>
