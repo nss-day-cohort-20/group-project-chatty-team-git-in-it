@@ -34,5 +34,4 @@
 
 	window.Chatty = window.Chatty || {};
 	Chatty.DeleteMess = deleteMess;
-
 }

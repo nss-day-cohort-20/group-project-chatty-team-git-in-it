@@ -5,11 +5,11 @@ let clear = document.getElementById('clear-btn')
 
 inputBox.addEventListener('keypress', function() {
 	if (inputBox.value !== '' && event.key === 'Enter') {
-			Chatty.DeleteMess.clearElement();
-			Chatty.DOMInteraction.addToArray();
-			Chatty.DOMInteraction.assignIds(Chatty.DOMInteraction.getUserMessages());
-			inputBox.value = '';
-			Chatty.DeleteMess.disableBtn();
+		Chatty.DeleteMess.clearElement();
+		Chatty.DOMInteraction.addToArray();
+		Chatty.DOMInteraction.assignIds(Chatty.DOMInteraction.getUserMessages());
+		inputBox.value = '';
+		Chatty.DeleteMess.disableBtn();
 	}
 });
 

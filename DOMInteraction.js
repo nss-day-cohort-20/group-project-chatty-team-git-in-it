@@ -17,7 +17,8 @@
 	// adds message to output box based on passed in ID and Message
   	addMessages.putMsgsInDom = function (id, msg) {
   		let messageBlock = document.createElement('div');
-		messageBlock.setAttribute("id", `${id}`)
+		messageBlock.setAttribute("id", `${id}`);
+		messageBlock.setAttribute("class", "message-container")
 		messageBlock.innerHTML = `<p class="msg">${msg}</p><button class="delete-btn">Delete</button>`;
 		output.appendChild(messageBlock);
 	}
@@ -34,6 +35,7 @@
 	}
 
 	// functionality to change to dark theme or enlarged text
+	let increaseFontSize = document.querySelector(".biggerTextOption")
 	let addTheme = document.querySelector(".theme");
 
 	document.getElementById("dark-theme-box").addEventListener("click", function() {
@@ -41,7 +43,7 @@
 	});
 
 	document.getElementById("large-text-box").addEventListener("click", function() {
-		addTheme.classList.toggle("large");
+		increaseFontSize.classList.toggle("large");
 	});
 
 	window.Chatty = window.Chatty || {};
